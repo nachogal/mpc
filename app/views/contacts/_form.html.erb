@@ -1,0 +1,10 @@
+<%= simple_form_for @contact do |f| %>
+    <%= f.input :name, placeholder: "Name", label: false, class: 'box' %>
+    <%= f.input :email, placeholder: "Email", label: false, class: 'box' %>
+    <%= f.input :description, as: :text, placeholder: "How can we help you?", label: false, class: 'box' %>
+    <%= button_tag "Contact Us", type: :submit, class: 'button button-secondary', title: "Contact Us" %>
+    <div>
+    	<p class="visit">Visit Us At:</p>
+    </div>	
+    <%= link_to (image_tag "capital.png", class: "img-responsive center-block capital"), "http://capitalfactory.com/", class: "img-responsive", target: "_blank", title: "Capital Factory" %>
+<% end %>
