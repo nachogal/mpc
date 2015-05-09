@@ -8,15 +8,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand scroll" href="#intro"><%= image_tag "logo_white.png" %></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
+
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-        <li><%= link_to "Por Qué", root_path(anchor: "what"), class: "scroll" %></li>
-        <li><%= link_to "Quiénes", root_path(anchor: "team"), class: "scroll" %></li>
-        <li><%= link_to "Cómo", root_path(anchor: "features"), class: "scroll" %></li>
-        <li><%= link_to "Qué", root_path(anchor: "solutions"), class: "scroll" %></li>
+        <li><%= link_to "Program", root_path(anchor: "features"), class: "scroll" %></li>
+        <li><%= link_to "Students", root_path(anchor: "students"), class: "scroll" %></li>
+        <li><%= link_to "Contact Us", root_path(anchor: "contact"), class: "scroll" %></li>
         </div>
         <!-- /.navbar-collapse -->
     </div>
@@ -25,20 +26,56 @@
 
 
 <section id="intro" class="centered bg-blue top">
-  <div class="container innovatigo">
+  <div class="container top">
     <div class="row">
-      <div class="col-md-3 col-sm-12 col-xs-12">
-        <%= image_tag "tigo.png", class: "img-responsive center-block tigo" %>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <%= image_tag "backgrounds/education.jpg", class: "img-responsive center-block background" %>
+            <div class="carousel-caption">
+              <h1>Lifelong learning comes<BR>from living life.</h1>
+            </div>
+          </div>
+
+          <div class="item">
+            <%= image_tag "backgrounds/carmen.jpg", class: "img-responsive center-block background" %>
+            <div class="carousel-caption">
+              <h1 class="education">Education as unique as you.</h1>
+            </div>
+          </div>
+
+          <div class="item">
+            <%= image_tag "backgrounds/become.jpg", class: "img-responsive center-block background" %>
+            <div class="carousel-caption">
+              <h1 class="become">Become who you were<BR>meant to be.</h1>
+
+            </div>
+          </div>
+
+        <!-- Left and right controls -->
+        <a class="left no-border carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <img class="arrow" src="/assets/arrow_left.png" alt="Arrow">
+        </a>
+
+        <a class="right no-border carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <img class="arrow" src="/assets/arrow_right.png" alt="Arrow">
+        </a>
       </div>
-      <div class="col-md-9 col-sm-12 col-xs-12">
-        <h1>Innovation<span class="team"> team</span></h1>
-        <h3 class="ufm">Michael Polanyi College at UFM</h3>
-      </div>
+
     </div>
   </div> <!-- /container -->
 </section> <!-- /intro -->
 
-<section id="what">
+<section id="about">
   <div class="container centered">
       <div class="col-lg-12">
           <h2 class="grow">Tigo necesita un equipo de innovación</h2>
@@ -52,7 +89,52 @@
 
 <div class="line"></div>
 
-<section id="team">
+<section id="features">
+  <div class="container diferencias centered">
+    <h2>Lo Que Nos Hace Diferentes</h2>
+        <div class="row">
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <%= image_tag "metodo.png", class: "img-responsive center-block cualidad" %>
+            <h5>Resolución de Problemas</h5>
+            <ul>
+              <li><p class="inciso">Facilitadores de Unconference</p></li>
+              <li><p class="inciso">Design Thinking</p></li>
+              <li><p class="inciso">Investigación de Campo</p></li>
+              <li><p class="inciso">Diálogos Socráticos</p></li>
+              <li><p class="inciso">Enfoque Emprendedor</p></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <%= image_tag "diseno.png", class: "img-responsive center-block cualidad" %>
+            <h5>Diseño & Desarrollo Web</h5>
+            <ul>
+              <li><p class="inciso">Diseño Gráfico</p></li>
+              <li><p class="inciso">Programación</p></li>
+              <li><p class="inciso">Redes Sociales</p></li>
+              <li><p class="inciso">Interface de Usuario</p></li>
+              <li><p class="inciso">Branding</p></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <%= image_tag "cultura.png", class: "img-responsive center-block cualidad" %>
+            <h5>Cultura de Diversidad</h5>
+            <ul>
+              <li><p class="inciso">Comunidad Colaborativa </p></li>
+              <li><p class="inciso">Multi-lingüe</p></li>
+              <li><p class="inciso">Red de Contactos Internacionales</p></li>
+              <li><p class="inciso">Espacio de Co-working</p></li>
+              <li><p class="inciso">Experiencias en Diferentes Campos</p></li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- /col -->
+  </div> <!-- /container -->
+</section> <!-- /portfolio -->
+
+
+<section id="students">
   <div class="container" id="centered">
     <h2>Conócenos</h2>
       <div class="col-md-12">
@@ -180,53 +262,7 @@
   </div> <!-- /container -->
 </section> <!-- /portfolio -->
 
-<div class="line"></div>
-
-<section id="features">
-  <div class="container diferencias centered">
-    <h2>Lo Que Nos Hace Diferentes</h2>
-        <div class="row">
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <%= image_tag "metodo.png", class: "img-responsive center-block cualidad" %>
-            <h5>Resolución de Problemas</h5>
-            <ul>
-              <li><p class="inciso">Facilitadores de Unconference</p></li>
-              <li><p class="inciso">Design Thinking</p></li>
-              <li><p class="inciso">Investigación de Campo</p></li>
-              <li><p class="inciso">Diálogos Socráticos</p></li>
-              <li><p class="inciso">Enfoque Emprendedor</p></li>
-            </ul>
-          </div>
-
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <%= image_tag "diseno.png", class: "img-responsive center-block cualidad" %>
-            <h5>Diseño & Desarrollo Web</h5>
-            <ul>
-              <li><p class="inciso">Diseño Gráfico</p></li>
-              <li><p class="inciso">Programación</p></li>
-              <li><p class="inciso">Redes Sociales</p></li>
-              <li><p class="inciso">Interface de Usuario</p></li>
-              <li><p class="inciso">Branding</p></li>
-            </ul>
-          </div>
-
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <%= image_tag "cultura.png", class: "img-responsive center-block cualidad" %>
-            <h5>Cultura de Diversidad</h5>
-            <ul>
-              <li><p class="inciso">Comunidad Colaborativa </p></li>
-              <li><p class="inciso">Multi-lingüe</p></li>
-              <li><p class="inciso">Red de Contactos Internacionales</p></li>
-              <li><p class="inciso">Espacio de Co-working</p></li>
-              <li><p class="inciso">Experiencias en Diferentes Campos</p></li>
-            </ul>
-          </div>
-        </div>
-      </div> <!-- /col -->
-  </div> <!-- /container -->
-</section> <!-- /portfolio -->
-
-<section id="solutions" class="bg-grey">
+<section id="contact" class="bg-grey">
   <div class="container">
 
     <h2>Problemas A Resolver</h2>

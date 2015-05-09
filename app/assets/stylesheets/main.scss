@@ -16,7 +16,6 @@ body, html { height: 100%; width: 100%; font-size: 18px; }
 }
 
 body {
-  margin-top: 80px;
   background-color: #fff;
   letter-spacing: -0.02rem;
   line-height: 1.33;
@@ -57,18 +56,17 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-family: 'Futura Book', sans-serif;
+  font-family: 'TeX Gyre Adventor', sans-serif;
+  font-weight: 700;
   color: white;
-  font-size: 4.2rem;
-  margin: 0.8rem 0 0.2rem 0;
-  text-transform: uppercase;
-  text-align: left;
+  text-transform: none;
+  font-size: 3rem;
+  margin: 0.5rem -2.3rem 1rem -2.3rem;
+  text-align: center;
+  line-height: 3.5rem;
   @media (max-width: 1199px) {
-    font-size: 3.7rem;  
+    font-size: 2rem;  
     }
-  @media (max-width: 991px) {
-    text-align: center;  
-    }  
 }
 
 .team {
@@ -241,16 +239,6 @@ hr {
   width: auto; 
 } 
 
-.tigo {
-  height: 10rem;
-  width: auto;
-  float: right;
-    @media (max-width: 1199px) {
-    float: none;
-    margin-right: auto;
-    margin-left: auto
-  }
-}
 
 .overlay {
   opacity: 1;
