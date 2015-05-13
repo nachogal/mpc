@@ -8,8 +8,13 @@ class UsersController < ApplicationController
  	  @user = User.find(params[:id])
   end
 
-   def edit
+  def edit
     @user = current_user
+  end
+
+  def portfolio
+    @user = User.find(params[:id])
+    @logged_in_id = current_user.id
   end
 
    def update_password

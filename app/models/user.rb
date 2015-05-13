@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :format => EMAIL_REGEX
   # validates :password, :confirmation => true #password_confirmation attr
   # validates_length_of :password, :in => 6..20, :on => :save
+ 
 end
