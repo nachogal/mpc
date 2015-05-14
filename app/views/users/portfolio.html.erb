@@ -1,24 +1,48 @@
-
-         <!-- /intro -->
 <section id="bio">
   <div class="container centered">
       <div class="col-lg-12">
-          <h2 class="grow">Who am I?</h2>
-      </div> 
-      <% if @user.id == @logged_in_id %>
-      <div class="editable"> 
-      <% else %>
-      <div>
-      <% end %>
-          <p class="personal">El MPC es un programa exclusivo compuesto por líderes innovadores.<BR>Afrontamos los retos de la economía creativa gracias a nuestra diversidad y capacidad de compromiso a largo plazo.<BR>Nuestro modelo de aprendizaje, único en la UFM, facilita la creación de TIGO INNOVATION TEAM.</p>
       </div>
+
+<% if @user.id == @logged_in_id %>
+  <%= form_for(@post) do |f| %>
+
+    <div class="field">
+      <%= f.label :title %>
+      <br>
+      <%= f.hidden_field :title, html: { id: "title" } %>
     </div>
+
+    <div class="editable" data-field-id="title">
+      <%= @post.title.html_safe %>
+    </div>
+
+    <div class="field">
+      <%= f.label :body %>
+      <br>
+      <%= f.hidden_field :body, html: { id: "body" } %>
+    </div>
+
+    <div class="editable" data-field-id="body">
+      <%= @post.body.html_safe %>
+    </div>
+    <%= f.submit "Update" %>
+  <% end %>
+<% else %>
+<!-- display normally -->
+
+  <span><%= @post.title.html_safe %></span>
+  <span><%= @post.body.html_safe %></span>
+  <span>By user: <%= @user.username %></span>
+
+
+<% end %>
+
   </div>
-  </section> 
+</section>
 
   <script>
   var editor = new MediumEditor('.editable');
-  editor.subscribe('editableInput', function (event, editable) {
-    // Do some work
-   });</script>
-
+  $('.editable').bind('input propertychange', function(text){
+    $("#post_" + $(this).attr("data-field-id")).val($(this).html());
+  });
+</script>
