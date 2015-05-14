@@ -1,6 +1,6 @@
 def rand
 	('a'..'z').to_a.shuffle[0,8].join
-end 
+end
 
 User.create!({"username"=>"AnjaG", "email"=>"agodo@ufm.edu", "password"=>rand})
 User.create!({"username"=>"CarmenR", "email"=>"clrodriguez@ufm.edu", "password"=>rand})
@@ -21,3 +21,8 @@ User.create!({"username"=>"MelanieF", "email"=>"mafalconer@ufm.edu", "password"=
 User.create!({"username"=>"PabloV", "email"=>"ppablo@ufm.edu", "password"=>rand})
 User.create!({"username"=>"RafaP", "email"=>"rparra@ufm.edu", "password"=>rand})
 
+
+count = User.all.count
+(1..count).each { |user_id|
+  Post.create!({title: "Edit Title", body: "Edit Body", user_id: user_id})
+}

@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require medium-editor
+
+
 
 /*smoothscroll*/
 jQuery(document).ready(function(e) {
