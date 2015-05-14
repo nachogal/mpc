@@ -1,0 +1,11 @@
+.table {
+	font-size: 0.7em;
+}
+
+.text {
+	font-family: font-family: 'TeX Gyre Adventor', sans-serif;
+	font-size: 1rem;
+	text-transform: lowercase;
+	line-height: 100%;
+}
+
