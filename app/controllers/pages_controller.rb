@@ -14,4 +14,7 @@ class PagesController < ApplicationController
 
   def handbook
   end	
+
+  def user
+  end   
 end
