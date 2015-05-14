@@ -17,13 +17,38 @@
             <ul class="nav navbar-nav">
         <li><%= link_to "Program", root_path(anchor: "features"), class: "scroll" %></li>
         <li><%= link_to "Students", root_path(anchor: "students"), class: "scroll" %></li>
-        <li><%= link_to "Contact Us", root_path(anchor: "contact"), class: "scroll" %></li>
+        <li><%= link_to "Contact", root_path(anchor: "contact"), class: "scroll" %></li>                
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
-</nav>
+    <script>
+      var a = $(".navbar").offset().top;
 
+      $(document).scroll(function(){
+          if($(this).scrollTop() > a)
+          {   
+             $('.navbar').css({"background":"rgba(181, 23, 11, 1)"});
+             $('.navbar-brand img').css({"max-height":"2rem"});
+             $('.navbar-brand img').css({"transform":"translateY(-15%)"});
+             $('.navbar-default .navbar-nav>li>a').css({"font-size":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-top":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-bottom":"0.3rem"});
+             $('.navbar .navbar-collapse').css({"margin-top":"0.1rem"}); 
+             $('.navbar .navbar-collapse').css({"margin-bottom":"0.1rem"}); 
+          } else {
+             $('.navbar').css({"background":"transparent"});
+             $('.navbar-brand img').css({"max-height":"3rem"});
+             $('.navbar-brand img').css({"transform":"translateY(10%)"});
+             $('.navbar-default .navbar-nav>li>a').css({"font-size":"0.9rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-top":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-bottom":"0.7rem"});
+             $('.navbar .navbar-collapse').css({"margin-top":"1rem"}); 
+             $('.navbar .navbar-collapse').css({"margin-bottom":"1rem"}); 
+          }
+      });
+    </script>
+</nav>
 
 <section id="intro" class="centered bg-blue top">
   <div class="container top">
@@ -76,60 +101,42 @@
 </section> <!-- /intro -->
 
 <section id="about">
-  <div class="container centered">
-      <div class="col-lg-12">
-          <h2 class="grow">Tigo necesita un equipo de innovación</h2>
+  <div class="container">
+    <div class="col-lg-4 logo">  
+      <div>
+        <p id="vision">Vision</p>
       </div>  
       <div>
-          <p class="programa">El MPC es un programa exclusivo compuesto por líderes innovadores.<BR>Afrontamos los retos de la economía creativa gracias a nuestra diversidad y capacidad de compromiso a largo plazo.<BR>Nuestro modelo de aprendizaje, único en la UFM, facilita la creación de TIGO INNOVATION TEAM.</p>
-      </div>
+        <h1 id="create">Create your own self.</h1>
+      </div>  
     </div>
+    <div class="col-lg-8">
+      <div>
+          <p id="programa">The MPC is an exclusive, 3-year fellowship program where creative leaders of all ages can design their own degree.</p>
+          <p id="programa">Life is the best education. MPC fosters creativity and critical thinking in an open and interdisciplinary environment. There is no division between work and school, student and faculty, id and free time.</p>
+          <p id="programa">After a one-year Bootcamp, students become funded MPC Fellows that organize their own curriculum, time, goals, and work with mentors independently or in collaboration.</p>
+          <p id="programa">Based at Guatemala’s top university, Universidad Francisco Marroquín, the MPC awards an accredited Bachelor of Arts with a focus that you define.</p>
+      </div>    
+    </div>    
   </div> <!-- /container -->
 </section> <!-- /what -->
 
-<div class="line"></div>
 
 <section id="features">
-  <div class="container diferencias centered">
-    <h2>Lo Que Nos Hace Diferentes</h2>
-        <div class="row">
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <%= image_tag "metodo.png", class: "img-responsive center-block cualidad" %>
-            <h5>Resolución de Problemas</h5>
-            <ul>
-              <li><p class="inciso">Facilitadores de Unconference</p></li>
-              <li><p class="inciso">Design Thinking</p></li>
-              <li><p class="inciso">Investigación de Campo</p></li>
-              <li><p class="inciso">Diálogos Socráticos</p></li>
-              <li><p class="inciso">Enfoque Emprendedor</p></li>
-            </ul>
-          </div>
-
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <%= image_tag "diseno.png", class: "img-responsive center-block cualidad" %>
-            <h5>Diseño & Desarrollo Web</h5>
-            <ul>
-              <li><p class="inciso">Diseño Gráfico</p></li>
-              <li><p class="inciso">Programación</p></li>
-              <li><p class="inciso">Redes Sociales</p></li>
-              <li><p class="inciso">Interface de Usuario</p></li>
-              <li><p class="inciso">Branding</p></li>
-            </ul>
-          </div>
-
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <%= image_tag "cultura.png", class: "img-responsive center-block cualidad" %>
-            <h5>Cultura de Diversidad</h5>
-            <ul>
-              <li><p class="inciso">Comunidad Colaborativa </p></li>
-              <li><p class="inciso">Multi-lingüe</p></li>
-              <li><p class="inciso">Red de Contactos Internacionales</p></li>
-              <li><p class="inciso">Espacio de Co-working</p></li>
-              <li><p class="inciso">Experiencias en Diferentes Campos</p></li>
-            </ul>
-          </div>
-        </div>
-      </div> <!-- /col -->
+  <div class="container">
+    <div class="col-lg-4 logo">  
+      <div>
+        <p id="vision">Program</p>
+      </div>  
+      <div>
+        <h1 id="create">Bootcamp</h1>
+      </div>  
+    </div>
+    <div class="col-lg-8 photo">
+      <div>
+        <%= image_tag "backgrounds/become.jpg", class: "img-responsive center-block background" %>
+      </div>
+    </div>  
   </div> <!-- /container -->
 </section> <!-- /portfolio -->
 
