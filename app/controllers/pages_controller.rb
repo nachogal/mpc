@@ -11,4 +11,7 @@ class PagesController < ApplicationController
 
   def implement
   end
+
+  def handbook
+  end	
 end
