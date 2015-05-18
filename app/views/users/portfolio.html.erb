@@ -27,12 +27,22 @@
     </div>
     <%= f.submit "Update" %>
   <% end %>
+
+  <%= form_for @user, upload_avatar_path, method: :patch do |f| %>
+  <div>
+    <%= f.label :Avatar%>
+    <%= f.file_field :avatar %>
+        <%= f.submit "Update_image" %>
+  </div>
+
+<% end %>
 <% else %>
 <!-- display normally -->
 
   <span><%= @post.title.html_safe %></span>
   <span><%= @post.body.html_safe %></span>
   <span>By user: <%= @user.username %></span>
+  <span><%= image_tag(@user.avatar.url) if @user.avatar? %></span>
 
 
 <% end %>
