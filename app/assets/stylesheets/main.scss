@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-family: 'TeX Gyre Adventor', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Pro', 'Proxima Nova', sans-serif;
   font-weight: 700;
   color: white;
   font-size: 3rem;
@@ -65,6 +65,7 @@ h1 {
   line-height: 3.5rem;
   @media (max-width: 1199px) {
     font-size: 2rem;  
+    line-height: 2.5rem;
     }
 }
 
@@ -101,7 +102,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'TeX Gyre Adventor', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Pro', sans-serif;
   font-weight: 700;
   color: white;
   font-size: 1.3rem;
@@ -163,8 +164,12 @@ p {
 
 // Links
 a {
-  font-size: 1.25rem;
+  font-family: 'Geo', sans-serif;
+  font-weight: 100;
+  font-size: 0.9rem;
   color: $black;
+  margin: 0 0 0 0;
+  letter-spacing: 0.01rem;
   word-wrap: break-word;
 }
 
@@ -216,7 +221,11 @@ hr {
 .button-primary {
   background: white;
   width: 7rem;
+  margin-top: 1rem;
   padding: 0px 10px 0px 10px;
+  @media (max-width: 767px) {
+    margin-top: 2rem;
+  }
 }
 
 .button-primary:hover {
@@ -238,4 +247,18 @@ hr {
 .teammate {
   height: 180px;
   width: 180px;   
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0rem 0.5rem 1rem 0rem;
+  font-weight: 700;
+}
+
+.radio, .checkbox {
+  position: relative;
+  display: block;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
 }

@@ -490,13 +490,27 @@
 
 <footer>
   <div class="row">
-    <div class="col-lg-6 col-xs-9">
-      <p class="copyright">© 2015 Michael Polanyi College at UFM</p> 
+    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-5 right">
+      <%= image_tag "logo_small.png", class: "img-responsive center-block spiral"%>
     </div>
-    <div class="col-lg-6 col-xs-3 right">
+    <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
+      <p class="copyright">© 2015 Michael Polanyi College</p> 
+      <p class="copyright">Universidad Francisco Marroquín</p> 
+      <p class="copyright">Guatemala City, Guatemala</p> 
+    </div>
+    <div class="hidden-xs col-lg-3 col-md-3 col-sm-3 right">
       <button type="button" class="button button-primary">
         <a href="http://localhost:3000/users/sign_in"><h4 id="log">LOG IN</h4></a>
       </button>
     </div>
+
+    <row>
+      <div class="visible-xs col-xs-12 centered">
+        <button type="button" class="button button-primary">
+          <h4 id="log">LOG IN</h4>
+        </button>
+      </div>
+    </row>  
+
   </div>
 </footer>
