@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   as :user do
     get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
     patch 'users/:id' => 'devise/registrations#update', :as => 'user_registration'
+    # patch 'users/:id/porfolio' => 'users#portfolio', :as => 'user_portfolio'
   end
 
-  get 'users/:id/portfolio' => 'users#portfolio'
+  get 'users/:id/portfolio' => 'users#portfolio', as: 'user_portfolio'
 
   resources :posts
 
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
       patch :update_password
     end
   end
+
+  patch 'users/:id/upload_avatar' => 'users#upload_avatar', as: 'upload_avatar_user'
 
   resources :contacts, only: [:new, :create]
   root 'pages#home'

@@ -3,7 +3,8 @@
       <div class="col-lg-12">
       </div>
 
-<% if @user.id == @logged_in_id %>
+
+<% if current_user && params[:id].to_i == current_user.id %>
   <%= form_for(@post) do |f| %>
 
     <div class="field">
@@ -27,15 +28,26 @@
     </div>
     <%= f.submit "Update" %>
   <% end %>
+
+  <%= form_for current_user, url: upload_avatar_user_path(current_user), method: :patch, html: { multipart: true } do |f| %>
+    <div>
+      <%= f.label :Avatar%>
+      <%= f.file_field :avatar %>
+      <%= f.submit "Update_image" %>
+    </div>
+  <% end %>
 <% else %>
 <!-- display normally -->
 
   <span><%= @post.title.html_safe %></span>
   <span><%= @post.body.html_safe %></span>
+  <br>
+  <span><%= image_tag(@user.avatar.url) if @user.avatar? %></span>
+  <br>
   <span>By user: <%= @user.username %></span>
 
-
 <% end %>
+
 
   </div>
 </section>

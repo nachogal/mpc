@@ -13,14 +13,18 @@ class UsersController < ApplicationController
   def portfolio
     @user = User.find(params[:id])
 
-    if current_user.present?
-      @logged_in_id = current_user.id
-    end
-
     @post = @user.posts.first
   end
 
-   def update_password
+  def upload_avatar
+    if current_user.present?
+      if current_user.update(user_avatar_params)
+        redirect_to user_portfolio_path(current_user)
+      end
+    end
+  end
+
+  def update_password
     @user = User.find(current_user.id)
    if match_password(@user.password, params[:user][:old_password]) && @user.update(user_params)
         render :show
@@ -28,17 +32,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+  end
+
   private
+
+  def user_avatar_params
+    params.require(:user).permit(:avatar)
+  end
 
   def user_params
     # NOTE: Using `strong_parameters` gem
     params.required(:user).permit(:password, :password_confirmation)
   end
-end
 
   def match_password(a,b)
    if a.nil?
-  		return true
-  	end
-  	a == b
+      return true
+    end
+    a == b
   end
+
+end
