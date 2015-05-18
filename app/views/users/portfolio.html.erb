@@ -4,7 +4,7 @@
       </div>
 
 <% if @user.id == @logged_in_id %>
-  <%= form_for(@post) do |f| %>
+  <%= form_for(@post), :html => {multipart => true} do |f| %>
 
     <div class="field">
       <%= f.label :title %>
@@ -24,6 +24,9 @@
 
     <div class="editable" data-field-id="body">
       <%= @post.body.html_safe %>
+    </div>
+    <div>
+      <%= f.file_field :image %>
     </div>
     <%= f.submit "Update" %>
   <% end %>
