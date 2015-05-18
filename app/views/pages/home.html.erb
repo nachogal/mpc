@@ -17,13 +17,38 @@
             <ul class="nav navbar-nav">
         <li><%= link_to "Program", root_path(anchor: "features"), class: "scroll" %></li>
         <li><%= link_to "Students", root_path(anchor: "students"), class: "scroll" %></li>
-        <li><%= link_to "Contact Us", root_path(anchor: "contact"), class: "scroll" %></li>
+        <li><%= link_to "Contact", root_path(anchor: "contact"), class: "scroll" %></li>                
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
-</nav>
+    <script>
+      var a = $(".navbar").offset().top;
 
+      $(document).scroll(function(){
+          if($(this).scrollTop() > a)
+          {   
+             $('.navbar').css({"background":"rgba(181, 23, 11, 1)"});
+             $('.navbar-brand img').css({"max-height":"2rem"});
+             $('.navbar-brand img').css({"transform":"translateY(-15%)"});
+             $('.navbar-default .navbar-nav>li>a').css({"font-size":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-top":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-bottom":"0.3rem"});
+             $('.navbar .navbar-collapse').css({"margin-top":"0.1rem"}); 
+             $('.navbar .navbar-collapse').css({"margin-bottom":"0.1rem"}); 
+          } else {
+             $('.navbar').css({"background":"transparent"});
+             $('.navbar-brand img').css({"max-height":"3rem"});
+             $('.navbar-brand img').css({"transform":"translateY(10%)"});
+             $('.navbar-default .navbar-nav>li>a').css({"font-size":"0.9rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-top":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-bottom":"0.7rem"});
+             $('.navbar .navbar-collapse').css({"margin-top":"1rem"}); 
+             $('.navbar .navbar-collapse').css({"margin-bottom":"1rem"}); 
+          }
+      });
+    </script>
+</nav>
 
 <section id="intro" class="centered bg-blue top">
   <div class="container top">
@@ -76,239 +101,402 @@
 </section> <!-- /intro -->
 
 <section id="about">
-  <div class="container centered">
-      <div class="col-lg-12">
-          <h2 class="grow">Tigo necesita un equipo de innovación</h2>
+  <div class="container">
+    <div class="col-lg-4 logo">  
+      <div>
+        <p id="vision">Vision</p>
       </div>  
       <div>
-          <p class="programa">El MPC es un programa exclusivo compuesto por líderes innovadores.<BR>Afrontamos los retos de la economía creativa gracias a nuestra diversidad y capacidad de compromiso a largo plazo.<BR>Nuestro modelo de aprendizaje, único en la UFM, facilita la creación de TIGO INNOVATION TEAM.</p>
-      </div>
+        <h1 id="create">Create yourself</h1>
+      </div>  
     </div>
+    <div class="col-lg-8">
+      <div>
+          <p class="body">The MPC is an exclusive, 3-year fellowship program where creative leaders of all ages can design their own degree.</p>
+          <p class="body">Life is the best education. MPC fosters creativity and critical thinking in an open and interdisciplinary environment. There is no division between work and school, student and faculty.</p>
+          <p class="body">After a one-year Bootcamp, students become funded MPC Fellows that organize their own curriculum, time, goals, and work with mentors independently or in collaboration.</p>
+          <p class="body">Based at Guatemala’s top university, Universidad Francisco Marroquín, the MPC awards an accredited Bachelor of Arts with a focus that you define.</p>
+      </div>    
+    </div>    
   </div> <!-- /container -->
-</section> <!-- /what -->
-
-<div class="line"></div>
+</section> <!-- /about -->
 
 <section id="features">
-  <div class="container diferencias centered">
-    <h2>Lo Que Nos Hace Diferentes</h2>
-        <div class="row">
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <%= image_tag "metodo.png", class: "img-responsive center-block cualidad" %>
-            <h5>Resolución de Problemas</h5>
-            <ul>
-              <li><p class="inciso">Facilitadores de Unconference</p></li>
-              <li><p class="inciso">Design Thinking</p></li>
-              <li><p class="inciso">Investigación de Campo</p></li>
-              <li><p class="inciso">Diálogos Socráticos</p></li>
-              <li><p class="inciso">Enfoque Emprendedor</p></li>
-            </ul>
-          </div>
-
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <%= image_tag "diseno.png", class: "img-responsive center-block cualidad" %>
-            <h5>Diseño & Desarrollo Web</h5>
-            <ul>
-              <li><p class="inciso">Diseño Gráfico</p></li>
-              <li><p class="inciso">Programación</p></li>
-              <li><p class="inciso">Redes Sociales</p></li>
-              <li><p class="inciso">Interface de Usuario</p></li>
-              <li><p class="inciso">Branding</p></li>
-            </ul>
-          </div>
-
-          <div class="col-md-4 col-sm-12 col-xs-12">
-            <%= image_tag "cultura.png", class: "img-responsive center-block cualidad" %>
-            <h5>Cultura de Diversidad</h5>
-            <ul>
-              <li><p class="inciso">Comunidad Colaborativa </p></li>
-              <li><p class="inciso">Multi-lingüe</p></li>
-              <li><p class="inciso">Red de Contactos Internacionales</p></li>
-              <li><p class="inciso">Espacio de Co-working</p></li>
-              <li><p class="inciso">Experiencias en Diferentes Campos</p></li>
-            </ul>
-          </div>
-        </div>
-      </div> <!-- /col -->
+  <div class="container">
+    <div class="col-lg-5 col-lg-push-7 col-md-5 col-md-push-7 logo">  
+      <div>
+        <p id="vision">Program</p>
+      </div>  
+      <div>
+        <h1 id="create">Bootcamp</h1>
+        <h3>Discover</h3>
+      </div>  
+      <div>
+        <p>Work independently and collaborate in a modern Liberal Arts Bootcamp. Master public speaking and writing in english. Learn how to learn.</p>
+      </div>  
+    </div>
+    <div class="col-lg-7 col-lg-pull-5 col-md-7 col-md-pull-5 photo">
+      <div>
+        <%= image_tag "backgrounds/bootcamp.jpg", class: "img-responsive center-block background" %>
+      </div>
+    </div>  
   </div> <!-- /container -->
-</section> <!-- /portfolio -->
+</section> <!-- /features -->
 
+<section id="features">
+  <div class="container">
+    <div class="col-lg-5 col-md-5 logo">  
+      <div>
+        <p id="vision">Program</p>
+      </div>  
+      <div>
+        <h1 id="create">Fellowship</h1>
+        <h3>Accelerate</h3>
+      </div>  
+      <div>
+        <p>Start designing your own degree as a funded MPC Fellow. No schedules, only commitments. Be an intern abroad or at home.</p>
+      </div>  
+    </div>
+    <div class="col-lg-7 col-md-7 photo">
+      <div>
+        <%= image_tag "backgrounds/fellowship.jpg", class: "img-responsive center-block background" %>
+      </div>
+    </div>  
+  </div> <!-- /container -->
+</section> <!-- /features -->
+
+<section id="features">
+  <div class="container">
+    <div class="col-lg-5 col-lg-push-7 col-md-5 col-md-push-7 logo">  
+     <div>
+        <p id="vision">Program</p>
+      </div>  
+      <div>
+        <h1 id="create">Leadership</h1>
+        <h3>Launch</h3>
+      </div>  
+      <div>
+        <p>Start businesses, make art and do work that matters. Enjoy special trips, seminars, opportunities and privileges. Build the habits and mindset you need to become your best self.</p>
+      </div>  
+    </div>
+    <div class="col-lg-7 col-lg-pull-5 col-md-7 col-md-pull-5 photo">
+      <div>
+        <%= image_tag "backgrounds/leadership.jpg", class: "img-responsive center-block background" %> 
+      </div>
+    </div>  
+  </div> <!-- /container -->
+</section> <!-- /features -->
 
 <section id="students">
   <div class="container" id="centered">
-    <h2>Conócenos</h2>
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/pablo.jpg", class: "img-responsive center-block teammate"), "#pablo", class: "popup-with-zoom-anim"%>
-            <h3>Pablo Velásquez</h3>
-            <p class="rol">Economía & Emprendimiento Social</p>
-              <div id="pablo" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Pablo Velásquez</h3>
-                <p class="rol">Mi nombre es Pablo y mi pasión es aprender.<BR>Creo firmemente que el emprendimiento junto con los principios de una sociedad libre son el camino hacia una Guatemala prospera. Por ello he decidido dedicar mis esfuerzos a la creación de proyectos empresariales que atiendan problemas sociales de forma sostenible y a largo plazo.  También me gustan los seguros, lo británico y las piñas.</p>
-              </div>
+    <div class="col-lg-4 col-md-12 logo">  
+      <div>
+        <p id="vision">Students</p>
+      </div>  
+      <div>
+        <h1 id="create">Second Year</h1>
+        <h3>The Revolutionaries</h3>
+      </div>   
+    </div>
+    <div class="col-lg-8 col-md-12">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/andres.jpg", class: "img-responsive center-block teammate"%>
+            </div>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/ignacio.jpg", class: "img-responsive center-block teammate"), "#ignacio", class: "popup-with-zoom-anim"%>
-            <h3>Ignacio Galindo</h3>
-            <p class="rol">Diseño & Desarrollo Web</p>
-              <div id="ignacio" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Ignacio Galindo</h3>
-                <p class="rol">Artista de tiempo completo.<BR>Diseñador con complejo de filósofo. Aficionado de la neurociencia y la astrofísica.<BR>Creo que la simpleza es la máxima sofisticación. Lucho día a día por la difusión del arte bajo una apreciación crítica y empática. Miembro de Junto Studio.</p>  
-              </div>
+          <div class="contenthover">
+              <h4>Andrés Descamps</h4>
+              <p class="rol">Creative Writing</p>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/valerie.jpg", class: "img-responsive center-block teammate"), "#valerie", class: "popup-with-zoom-anim"%>
-            <h3>Valerie Andrews</h3>
-            <p class="rol">Artes Escénicas</p>
-              <div id="valerie" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Valerie Andrews</h3>
-                <p class="rol">Actriz. Cantante. Creadora del Festival de arte Big Dipper. Miembro de varias compañías de actuación. Entusiasta de la vida. Fluída en sarcasmo, ironía y malas palabras.</p>
-              </div>  
-          </div> 
-        </div>
+        </div> 
 
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/isabela.jpg", class: "img-responsive center-block teammate"), "#isabela", class: "popup-with-zoom-anim"%>
-            <h3>Isabela Sagastuy</h3>
-            <p class="rol">Fashion & Producción de Eventos</p>
-              <div id="isabela" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Isabela Sagastuy</h3>
-                <p class="rol">Soy una mujer innovadora, creativa y organizada. Me encanta la moda y todos los procesos que llevan las grandes producciones. Me fascina organizar eventos, hacerlos de forma creativa y darles un toque único. Creo en que todos tenemos un estilo, el cual debemos de encontrar, amar y potenciar. Amo los colores, el verano, los niños y formar parte del cambio.</p>
-              </div>  
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/melanie.jpg", class: "img-responsive center-block teammate"%>
+            </div>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/chantal.jpg", class: "img-responsive center-block teammate"), "#chantal", class: "popup-with-zoom-anim"%>
-            <h3>Chantal Soldini</h3>
-            <p class="rol">Relaciones Públicas</p>
-              <!-- <div id="chantal" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Chantal Soldini</h3>
-                <p class="rol">Sean Duffy is an educator and EdTech leader who is passionate about helping to make meaningful change in education through technology. In addition to his work with EdTech Action, Sean is also the founder of EdTech Austin and the lead Organizer for Startup Weekend Education - Austin. Currently, Sean is an Assessment Specialist and Startup teammate/Advisor for Pearson Catalyst for Education.</p>
-              </div>-->
+          <div class="contenthover">
+              <h4>Melanie Falconer</h4>
+              <p class="rol">Project Management</p>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/majo.jpg", class: "img-responsive center-block teammate"), "#majo", class: "popup-with-zoom-anim"%>
-            <h3>Majo Crespo</h3>
-            <p class="rol">Branding & Diseño</p>
-              <!-- <div id=#majo" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Majo Crespo</h3>
-                <p class="rol">Sean Duffy is an educator and EdTech leader who is passionate about helping to make meaningful change in education through technology. In addition to his work with EdTech Action, Sean is also the founder of EdTech Austin and the lead Organizer for Startup Weekend Education - Austin. Currently, Sean is an Assessment Specialist and Startup teammate/Advisor for Pearson Catalyst for Education.</p> 
-              </div> --> 
-          </div>
-        </div>
+        </div> 
 
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/nataly.jpg", class: "img-responsive center-block teammate"), "#nataly", class: "popup-with-zoom-anim"%>
-            <h3>Nataly Basterrechea</h3>
-            <p class="rol">Fotografía & Arte</p>
-              <div id="nataly" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Nataly Basterrechea</h3>
-                <p class="rol">Me encanta la luz y no desprecio las sombras. Por esta razón me apasiona tomar fotos, es robar momentos congelando fotones.<BR>Soy bastante analítica y observadora. Creo que todo el tiempo es una oportunidad de aprendizaje y crecimiento. La lectura es uno de los grandes amores de mi vida.<BR>Me considero bastante determinada y apasionada. Me gustan los retos y me fascina romper mis limites. Veo la necesidad de ponernos en situaciones incomodas para crecer.<BR>Soy una persona que valora la integridad y creo en mis valores. Veo en Guatemala muchas carencias pero al mismo tiempo muchas oportunidades. Anhelo ser parte del cambio en Guatemala. Y aunque soy consiente que no es ni será fácil, sé que seré un agente de cambio positivo para este país.</p> 
-              </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/ignacio.jpg", class: "img-responsive center-block teammate"%>
+            </div>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/lorena.jpg", class: "img-responsive center-block teammate"), "#lorena", class: "popup-with-zoom-anim"%>
-            <h3>Lorena Palmieri</h3>
-            <p class="rol">Emprendimiento Social</p>
-              <div id="lorena" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Lorena Palmieri</h3>
-                <p class="rol">Soy una emprendedora social enfocada en crear y difundir soluciones empresariales para la pobreza que defiendan el potencial creativo e innovador de los seres humanos. Soy Miembro Fundador del Instituto Fe y Libertad. Trabajo en Acton Institute como coordinadora de la difusion de los documentales Poverty Inc y Poverty Cure en Latinoamérica.</p>
-              </div>  
+          <div class="contenthover">
+              <h4>Ignacio Galindo</h4>
+              <p class="rol">Web Design</p>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/javier.jpg", class: "img-responsive center-block teammate"), "#javier", class: "popup-with-zoom-anim"%>
-            <h3>Javier Parellada</h3>
-            <p class="rol">Producción de Cine</p>
-              <div id="javier" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Javier Parellada</h3>
-                <p class="rol">Educación. Cine. Libertad.<BR>Estudiante de tercer año apasionado por el aprendizaje constante y las infinitas conexiones posibles en este universo dinámico. Quiero cambiar la educación tradicional desde las mejores universidades hasta construir algo en los sectores económicos más bajos de la sociedad.</p>
-              </div>  
-          </div>
-        </div>
+        </div> 
+      </div>
 
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/isa.jpg", class: "img-responsive center-block teammate"), "#isa", class: "popup-with-zoom-anim"%>
-            <h3>Isa Moino</h3>
-            <p class="rol">Comunicación & Educación</p>
-              <!-- <div id="isa" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Isa Moino</h3>
-                <p class="rol">Sean Duffy is an educator and EdTech leader who is passionate about helping to make meaningful change in education through technology. In addition to his work with EdTech Action, Sean is also the founder of EdTech Austin and the lead Organizer for Startup Weekend Education - Austin. Currently, Sean is an Assessment Specialist and Startup teammate/Advisor for Pearson Catalyst for Education.</p> 
-              </div> -->
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/anja.jpg", class: "img-responsive center-block teammate"%>
+            </div>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/carmen.jpg", class: "img-responsive center-block teammate"), "#carmen", class: "popup-with-zoom-anim"%>
-            <h3>Carmen Rodriguez</h3>
-            <p class="rol">Educación</p>
-              <!-- <div id="carmen" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Carmen Rodriguez</h3>
-                <p class="rol">Sean Duffy is an educator and EdTech leader who is passionate about helping to make meaningful change in education through technology. In addition to his work with EdTech Action, Sean is also the founder of EdTech Austin and the lead Organizer for Startup Weekend Education - Austin. Currently, Sean is an Assessment Specialist and Startup teammate/Advisor for Pearson Catalyst for Education.</p> 
-              </div>  -->
+          <div class="contenthover">
+              <h4>Anja Godo</h4>
+              <p class="rol">Social Entrepreneurship</p>
           </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <%= link_to (image_tag "team/marcela.jpg", class: "img-responsive center-block teammate"), "#marcela", class: "popup-with-zoom-anim"%>
-            <h3>Marcela Richardson</h3>
-            <p class="rol">Desarrollo Humano</p>
-              <!-- <div id="marcela" class="zoom-anim-dialog mfp-hide small-dialog">
-                <h3>Marcela Richardson</h3>
-                <p class="rol">Sean Duffy is an educator and EdTech leader who is passionate about helping to make meaningful change in education through technology. In addition to his work with EdTech Action, Sean is also the founder of EdTech Austin and the lead Organizer for Startup Weekend Education - Austin. Currently, Sean is an Assessment Specialist and Startup teammate/Advisor for Pearson Catalyst for Education.</p> 
-              </div>  -->
-          </div>
-        </div>
+        </div> 
 
-      </div> <!-- /col -->
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/hana.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Hana Ko</h4>
+              <p class="rol">Visual Media</p>
+          </div>
+        </div> 
+
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/rafael.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Rafael Parra</h4>
+              <p class="rol">Music & Animation</p>
+          </div>
+        </div> 
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/mar.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Mar Samayoa</h4>
+              <p class="rol">Peace Studies</p>
+          </div>
+        </div> 
+
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/mafer.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Mafer Soto</h4>
+              <p class="rol">Performing Arts Management</p>
+          </div>
+        </div> 
+
+        <script>
+          $('.d').contenthover({
+              overlay_background:'#142e9e',
+              overlay_opacity: 1,
+          }); 
+        </script>
+      </div>
+
+    </div> <!-- /col -->
   </div> <!-- /container -->
-</section> <!-- /portfolio -->
+</section> <!-- /students -->
 
-<section id="contact" class="bg-grey">
-  <div class="container">
-
-    <h2>Problemas A Resolver</h2>
-
-    <div class="col-md-4 col-sm-12">
-      <div class="box">
-        <%= image_tag "educacion.jpg" %>
-        <div class="box-content">
-          <h3>Educación</h3>
-          <p>Programas de educación de bajo costo utilizando la tecnología TIGO.</p>
-        </div>
-      </div> <!-- /box -->
-    </div> <!-- /col -->
-    <div class="col-md-4 col-sm-12">
-      <div class="box">
-        <%= image_tag "seguridad.jpg" %>
-        <div class="box-content">
-          <h3>Seguridad</h3>
-          <p>Resolver los problemas de seguridad y confianza con la tecnología TIGO.</p>
-        </div>
-      </div> <!-- /box -->
-    </div> <!-- /col -->
-    <div class="col-md-4 col-sm-12">
-      <div class="box">
-        <%= image_tag "innovacion.jpg" %>
-        <div class="box-content">
-          <h3>Innovación</h3>
-          <p>Traer a Guatemala el proyecto de innovación social de Millicom.</p>
-        </div>
-      </div> <!-- /box -->
-    </div> <!-- /col -->
-
-  </div> <!-- /container -->
-</section>
-
-<section id="take-action" class='bg-purple contact'>
-  <div class="container innovamos">
-    <div class="row">
-      <h1 class="innovamos">¿Innovamos?</h1>
+<section id="students">
+  <div class="container" id="centered">
+    <div class="col-lg-4 col-lg-push-8 col-md-12 logo">  
+      <div>
+        <p id="vision">Students</p>
+      </div>  
+      <div>
+        <h1 id="create">Third Year</h1>
+        <h3>The Pioneers</h3>
+      </div>   
     </div>  
+    <div class="col-lg-8 col-lg-pull-4 col-md-12">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/grace.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Grace Becker</h4>
+              <p class="rol">Performing Arts</p>
+          </div>
+        </div>  
+
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/majo.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Majo Crespo</h4>
+              <p class="rol">Design & Entrepreneurship</p>
+          </div>
+        </div> 
+
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/kata.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Katarina Hall</h4>
+              <p class="rol">Economic & Social History</p>
+          </div>
+        </div>
+      </div>   
+
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/isa.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Isa Moino</h4>
+              <p class="rol">Communication<BR>& Education</p>
+          </div>
+        </div> 
+
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/lorena.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Lorena Palmieri</h4>
+              <p class="rol">Social Entrepreneurship</p>
+          </div>
+        </div> 
+
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/javier.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Javier Parellada</h4>
+              <p class="rol">Film & Education</p>
+          </div>
+        </div> 
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/marce.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Marcela Richardson</h4>
+              <p class="rol">Education<BR>& Entrepreneurship</p>
+          </div>
+        </div> 
+
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/diego.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Diego Rivera</h4>
+              <p class="rol">Entrepreneurship</p>
+          </div>
+        </div> 
+
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/carmen.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Carmen Rodriguez</h4>
+              <p class="rol">Education</p>
+          </div>
+        </div> 
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/javiert.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Javier Tabush</h4>
+              <p class="rol">Event Planning<BR>& Entrepreneurship</p>
+          </div>
+        </div> 
+
+        <div class="col-md-4 col-sm-4 col-xs-12 portrait">
+          <div class="d">
+            <div>
+              <%= image_tag "team/pablo.jpg", class: "img-responsive center-block teammate"%>
+            </div>
+          </div>
+          <div class="contenthover">
+              <h4>Pablo Velasquez</h4>
+              <p class="rol">Economics & Entrepreneurship</p>
+          </div>
+        </div> 
+
+        <script>
+          $('.d').contenthover({
+              overlay_background:'#142e9e',
+              overlay_opacity: 1,
+          }); 
+        </script>
+      </div>
+
+  </div> <!-- /container -->
+</section> <!-- /students -->
+
+
+<section id="contact">
+  <div class="container">
+    <div class="col-lg-4 col-md-12 logo">  
+      <div>
+        <p id="vision">Contact</p>
+      </div>  
+      <div>
+        <h1 id="create">Get in touch</h1>
+      </div>   
+    </div>   
   </div> <!-- /container -->
 </section>
 
 <footer>
-  <div class="container centered">
-    <p class="copyright">© 2015 Michael Polanyi College at UFM</p>
-    <!-- <p class="copyright">Hecho con amor por estudiantes del MPC</p>-->
+  <div class="row">
+    <div class="col-lg-6 col-xs-9">
+      <p class="copyright">© 2015 Michael Polanyi College at UFM</p> 
+    </div>
+    <div class="col-lg-6 col-xs-3 right">
+      <button type="button" class="button button-primary">
+        <h4 id="log">LOG IN</h4>
+      </button>
+    </div>
   </div>
 </footer>
