@@ -4,7 +4,7 @@
       </div>
 
 
-<% if params[:id].to_i == current_user.id %>
+<% if current_user && params[:id].to_i == current_user.id %>
   <%= form_for(@post) do |f| %>
 
     <div class="field">
@@ -26,9 +26,6 @@
     <div class="editable" data-field-id="body">
       <%= @post.body.html_safe %>
     </div>
-    <div>
-      <%= f.file_field :image %>
-    </div>
     <%= f.submit "Update" %>
   <% end %>
 
@@ -44,10 +41,11 @@
 
   <span><%= @post.title.html_safe %></span>
   <span><%= @post.body.html_safe %></span>
+  <br>
+  <span><%= image_tag(@user.avatar.url) if @user.avatar? %></span>
+  <br>
   <span>By user: <%= @user.username %></span>
 
-  <span><%= image_tag(@user.avatar.url) if @user.avatar? %></span>
-  <span><%= image_tag(@user.avatar.url) if @user.avatar? %></span>
 <% end %>
 
 
