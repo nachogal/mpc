@@ -17,11 +17,37 @@
             <ul class="nav navbar-nav">
         <li><%= link_to "Program", root_path(anchor: "features"), class: "scroll" %></li>
         <li><%= link_to "Students", root_path(anchor: "students"), class: "scroll" %></li>
-        <li><%= link_to "Contact Us", root_path(anchor: "contact"), class: "scroll" %></li>
+        <li><%= link_to "Contact", root_path(anchor: "contact"), class: "scroll" %></li>                
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
+    <script>
+      var a = $(".navbar").offset().top;
+
+      $(document).scroll(function(){
+          if($(this).scrollTop() > a)
+          {   
+             $('.navbar').css({"background":"rgba(181, 23, 11, 1)"});
+             $('.navbar-brand img').css({"max-height":"2rem"});
+             $('.navbar-brand img').css({"transform":"translateY(-15%)"});
+             $('.navbar-default .navbar-nav>li>a').css({"font-size":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-top":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-bottom":"0.3rem"});
+             $('.navbar .navbar-collapse').css({"margin-top":"0.1rem"}); 
+             $('.navbar .navbar-collapse').css({"margin-bottom":"0.1rem"}); 
+          } else {
+             $('.navbar').css({"background":"transparent"});
+             $('.navbar-brand img').css({"max-height":"3rem"});
+             $('.navbar-brand img').css({"transform":"translateY(10%)"});
+             $('.navbar-default .navbar-nav>li>a').css({"font-size":"0.9rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-top":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-bottom":"0.7rem"});
+             $('.navbar .navbar-collapse').css({"margin-top":"1rem"}); 
+             $('.navbar .navbar-collapse').css({"margin-bottom":"1rem"}); 
+          }
+      });
+    </script>
 </nav>
 
 <section id="about">
@@ -596,17 +622,15 @@
   </div> <!-- /container -->
 </section> <!-- /portfolio -->
 
-<section id="take-action" class='bg-purple contact'>
-  <div class="container innovamos">
-    <div class="row">
-      <h1 class="innovamos">¿Innovamos?</h1>
-    </div>  
-  </div> <!-- /container -->
-</section>
-
 <footer>
-  <div class="container centered">
-    <p class="copyright">© 2015 Michael Polanyi College at UFM</p>
-    <!-- <p class="copyright">Hecho con amor por estudiantes del MPC</p>-->
+  <div class="row">
+    <div class="col-lg-6 col-xs-9">
+      <p class="copyright">© 2015 Michael Polanyi College at UFM</p> 
+    </div>
+    <div class="col-lg-6 col-xs-3 right">
+      <button type="button" class="button button-primary">
+        <h4 id="log">LOG OUT</h4>
+      </button>
+    </div>
   </div>
 </footer>
