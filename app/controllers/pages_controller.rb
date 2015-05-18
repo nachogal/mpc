@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   def implement
   end
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except:[:home]
   def handbook
   end	
 end
