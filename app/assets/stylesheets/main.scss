@@ -222,7 +222,7 @@ hr {
   background: white;
   width: 7rem;
   margin-top: 1rem;
-  padding: 0px 10px 0px 10px;
+  padding: 7px 10px 0px 10px;
   @media (max-width: 767px) {
     margin-top: 2rem;
   }
@@ -302,7 +302,7 @@ label {
 input {
   width: 15rem;
   margin-bottom: 0.6rem;
-  padding-left: 0.3rem;
+  padding-left: 0rem;
 }
 
 .checkbox {
@@ -329,5 +329,10 @@ input {
 .teammate {
   height: 180px;
   width: 180px;   
+}
+
+.alert {
+  margin-bottom: 0rem;
+  text-align: center;
 }
 

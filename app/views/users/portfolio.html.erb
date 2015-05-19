@@ -1,60 +1,139 @@
-<section id="bio">
-  <div class="container centered">
-      <div class="col-lg-12">
-      </div>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand scroll" href="#intro"><%= image_tag "logo_white.png" %></a>
+        </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
 
-<% if current_user && params[:id].to_i == current_user.id %>
-  <%= form_for(@post) do |f| %>
-
-    <div class="field">
-      <%= f.label :title %>
-      <br>
-      <%= f.hidden_field :title, html: { id: "title" } %>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+        <li><%= link_to "Program", root_path(anchor: "features"), class: "scroll" %></li>
+        <li><%= link_to "Students", root_path(anchor: "students"), class: "scroll" %></li>
+        <li><%= link_to "Contact", root_path(anchor: "contact"), class: "scroll" %></li>                
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container -->
+    <script>
+      var a = $(".navbar").offset().top;
 
-    <div class="editable" data-field-id="title">
-      <%= @post.title.html_safe %>
-    </div>
-
-    <div class="field">
-      <%= f.label :body %>
-      <br>
-      <%= f.hidden_field :body, html: { id: "body" } %>
-    </div>
-
-    <div class="editable" data-field-id="body">
-      <%= @post.body.html_safe %>
-    </div>
-    <%= f.submit "Update" %>
-  <% end %>
-
-  <%= form_for current_user, url: upload_avatar_user_path(current_user), method: :patch, html: { multipart: true } do |f| %>
-    <div>
-      <%= f.label :Avatar%>
-      <%= f.file_field :avatar %>
-      <%= f.submit "Update_image" %>
-    </div>
-  <% end %>
-<% else %>
-<!-- display normally -->
-
-  <span><%= @post.title.html_safe %></span>
-  <span><%= @post.body.html_safe %></span>
-  <br>
-  <span><%= image_tag(@user.avatar.url) if @user.avatar? %></span>
-  <br>
-  <span>By user: <%= @user.username %></span>
-
-<% end %>
+      $(document).scroll(function(){
+          if($(this).scrollTop() > a)
+          {   
+             $('.navbar').css({"background":"rgba(181, 23, 11, 1)"});
+             $('.navbar-brand img').css({"max-height":"2rem"});
+             $('.navbar-brand img').css({"transform":"translateY(-15%)"});
+             $('.navbar-default .navbar-nav>li>a').css({"font-size":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-top":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-bottom":"0.3rem"});
+             $('.navbar .navbar-collapse').css({"margin-top":"0.1rem"}); 
+             $('.navbar .navbar-collapse').css({"margin-bottom":"0.1rem"}); 
+          } else {
+             $('.navbar').css({"background":"rgba(181, 23, 11, 1)"});
+             $('.navbar-brand img').css({"max-height":"2rem"});
+             $('.navbar-brand img').css({"transform":"translateY(-15%)"});
+             $('.navbar-default .navbar-nav>li>a').css({"font-size":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-top":"0.7rem"});
+             $('.navbar-default .navbar-nav>li>a').css({"padding-bottom":"0.3rem"});
+             $('.navbar .navbar-collapse').css({"margin-top":"0.1rem"}); 
+             $('.navbar .navbar-collapse').css({"margin-bottom":"0.1rem"});
+          }
+      });
+    </script>
+</nav>  
 
 
-  </div>
-</section>
+<body>
+  <section>
+    <div class="container">
+
+      <% if current_user && params[:id].to_i == current_user.id %>
+        <%= form_for(@post) do |f| %>
+
+          <div class="field">
+            <%= f.label :title %>
+            <br>
+            <%= f.hidden_field :title, html: { id: "title" } %>
+          </div>
+
+          <div class="editable" data-field-id="title">
+            <%= @post.title.html_safe %>
+          </div>
+
+          <div class="field">
+            <%= f.label :body %>
+            <br>
+            <%= f.hidden_field :body, html: { id: "body" } %>
+          </div>
+
+          <div class="editable" data-field-id="body">
+            <%= @post.body.html_safe %>
+          </div>
+          <%= f.submit "Update" %>
+        <% end %>
+
+        <%= form_for current_user, url: upload_avatar_user_path(current_user), method: :patch, html: { multipart: true } do |f| %>
+          <div>
+            <%= f.label :Avatar%>
+            <%= f.file_field :avatar %>
+            <%= f.submit "Update Image" %>
+          </div>
+        <% end %>
+      <% else %>
+      <!-- display normally -->
+
+        <span><%= @post.title.html_safe %></span>
+        <span><%= @post.body.html_safe %></span>
+        <br>
+        <span><%= image_tag(@user.avatar.url) if @user.avatar? %></span>
+        <br>
+        <span>By user: <%= @user.username %></span>
+
+      <% end %>
+
+    </div> <!-- end of container -->
+  </section> <!-- end of section -->
+  
+
 
   <script>
-  var editor = new MediumEditor('.editable');
-  $('.editable').bind('input propertychange', function(text){
-    $("#post_" + $(this).attr("data-field-id")).val($(this).html());
-  });
-</script>
+    var editor = new MediumEditor('.editable');
+    $('.editable').bind('input propertychange', function(text){
+      $("#post_" + $(this).attr("data-field-id")).val($(this).html());
+    });
+  </script>
+
+  <footer>
+    <div class="row">
+      <div class="col-lg-1 col-md-1 col-sm-2 col-xs-5 right">
+        <%= image_tag "logo_small.png", class: "img-responsive center-block spiral"%>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-7 col-xs-7">
+        <p class="copyright">© 2015 Michael Polanyi College</p> 
+        <p class="copyright">Universidad Francisco Marroquín</p> 
+        <p class="copyright">Guatemala City, Guatemala</p> 
+      </div>
+      <div class="hidden-xs col-lg-3 col-md-3 col-sm-3 right">
+        <button type="button" class="button button-primary">
+          <a href="http://localhost:3000/users/sign_out"><h4 id="log">LOG OUT</h4></a>
+        </button>
+      </div>
+
+      <row>
+        <div class="visible-xs col-xs-12 centered">
+          <button type="button" class="button button-primary">
+            <h4 id="log">LOG IN</h4>
+          </button>
+        </div>
+      </row>  
+
+    </div>
+  </footer>
+</body>  
