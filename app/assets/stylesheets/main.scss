@@ -102,7 +102,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'ITC Avant Garde Gothic Pro', sans-serif;
+  font-family: 'ITC Avant Garde Gothic Pro', 'Proxima Nova', sans-serif;
   font-weight: 700;
   color: white;
   font-size: 1.3rem;
@@ -158,7 +158,7 @@ p {
   font-size: 0.9rem;
   color: white;
   text-align: center;
-  margin: 0.5rem 1rem 1.5rem 1rem;
+  margin: 0.5rem 1rem 0.5rem 1rem;
   letter-spacing: 0rem;
 }
 
@@ -233,6 +233,30 @@ hr {
   opacity: 0.8;
   #log {
     color: white;  
+  } 
+}
+
+.button-secondary {
+  background: transparent;
+  width: 10rem;
+  margin-top: 0rem;
+  padding: 0px 10px 0px 10px;
+  #log {
+    color: white;  
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  } 
+  @media (max-width: 767px) {
+    margin-top: 2rem;
+  }
+}
+
+.button-secondary:hover {
+  opacity: 0.8;
+  #log {
+    text-decoration: underline;   
   } 
 }
 
