@@ -10,12 +10,12 @@ $background-grey: #eef2f3;
 
 .bg-purple {
   height: 20rem;
-  background: linear-gradient(270deg, #5544a2, #4369a9, #2c457e);
-  background-size: 600% 600%;
+  background: linear-gradient(270deg, #243a96, #247996);
+  background-size: 400% 400%;
 
-  -webkit-animation: AnimationName 8s ease infinite;
-  -moz-animation: AnimationName 8s ease infinite;
-  animation: AnimationName 8s ease infinite;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
 
   @-webkit-keyframes AnimationName {
       0%{background-position:0% 50%}
@@ -118,31 +118,25 @@ $background-grey: #eef2f3;
 } */
 
 .box {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
   background-color: #fff;
-  margin-top: 1.5rem;
+  margin-top: 4rem;
   margin-bottom: 1rem;
   padding: 0;
-  border-radius: 15px;
+  border-radius: 0rem;
   width: 20rem;
-
-  img {
-    width: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px
-  }
+  -webkit-box-shadow: 20px 20px 40px -10px rgba(0,0,0,0.6);
+  -moz-box-shadow: 20px 20px 40px -10px rgba(0,0,0,0.6);
+  box-shadow: 20px 20px 40px -10px rgba(0,0,0,0.6);
 
   .box-content {
     padding: 1.5rem;
   }
 
-  h3 {
-    color: $primary-color;
-    font-size: 1.3rem;
-    font-weight: 800;
-    letter-spacing: 0rem;
-    text-align: left;
-    margin-bottom: 1rem;
-    text-transform: none;
+  #create {
+    text-align: center;
   }
 }
 

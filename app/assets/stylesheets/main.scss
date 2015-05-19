@@ -260,6 +260,64 @@ hr {
   } 
 }
 
+.btn {
+  font-family: 'ITC Avant Garde Gothic Pro', 'Proxima Nova', sans-serif;
+  font-weight: 700;
+  width: 7rem;
+  background: $black;
+  color: white;
+  font-size: 0.8rem;
+  margin: 0.7rem 0 1rem 0;
+  padding-top: 0.6rem;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 0px;
+}
+
+.btn:hover {
+  background: $primary-color;
+  color: white;
+}
+
+// OTHER ELEMENTS
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0rem 0rem 1rem 0rem;
+  font-weight: 700;
+}
+
+input {
+  width: 15rem;
+  margin-bottom: 0.6rem;
+  padding-left: 0.3rem;
+}
+
+.checkbox {
+  margin-top: 0rem;
+  font-family: 'Geo', sans-serif;
+  font-weight: 100;
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0 0 0 0;
+  letter-spacing: 0.01rem;
+  word-wrap: break-word;
+}
+
+// FINISH ELEMENTS
+
 .row {
   margin: 0px;
 }
@@ -273,16 +331,3 @@ hr {
   width: 180px;   
 }
 
-label {
-  display: inline-block;
-  max-width: 100%;
-  margin: 0rem 0.5rem 1rem 0rem;
-  font-weight: 700;
-}
-
-.radio, .checkbox {
-  position: relative;
-  display: block;
-  margin-top: 0rem;
-  margin-bottom: 1rem;
-}
