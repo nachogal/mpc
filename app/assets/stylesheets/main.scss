@@ -222,7 +222,7 @@ hr {
   background: white;
   width: 7rem;
   margin-top: 1rem;
-  padding: 0px 10px 0px 10px;
+  padding: 5px 10px 0px 10px;
   @media (max-width: 767px) {
     margin-top: 2rem;
   }
@@ -237,7 +237,7 @@ hr {
 }
 
 .button-secondary {
-  background: transparent;
+  background: $secondary-color;
   width: 10rem;
   margin-top: 0rem;
   padding: 0px 10px 0px 10px;
@@ -254,7 +254,7 @@ hr {
 }
 
 .button-secondary:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   #log {
     text-decoration: underline;   
   } 

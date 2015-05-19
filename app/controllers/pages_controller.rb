@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @contact = Contact.new
+    @users = User.all
   end
 
   def initiate

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  resources :user, only: [:show, :edit] do
+  resources :users, only: [:show, :edit] do
     collection do
       patch :update_password
     end
